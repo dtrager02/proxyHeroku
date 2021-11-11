@@ -1,7 +1,5 @@
 from flask import Flask, session, render_template, Response, request, redirect
 from datetime import timedelta
-import random
-import itertools
 import requests
 statDir = './static/'
 templateDir = './templates/'
