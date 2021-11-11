@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, Response, request, redirect
+from flask import Flask, session, make_response, request, render_template, Response, redirect
 from datetime import timedelta
 import requests
 statDir = './static/'
@@ -17,7 +17,7 @@ def index():
 def start():
     if request.method == "POST":
         print(request.form["url"])
-        return requests.get(request.form["url"])
+        return make_response(requests.get(request.form["url"]).content,200)
     return "request did not work how you wanted"
 
 
